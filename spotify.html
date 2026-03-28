@@ -7,9 +7,10 @@
 <body>
 
 <header>
-    <h1>Spotify Feature Analysis</h1>
+    <h1>Massive Attack: Sonic Analysis</h1>
     <nav>
         <a href="index.html">Home</a>
+        <a href="spotify.html" class="active" aria-current="page">Spotify</a>
         <a href="rhythm.html">Rhythm</a>
         <a href="timbre.html">Timbre</a>
         <a href="harmony.html">Harmony</a>
@@ -18,30 +19,53 @@
 </header>
 
 <div class="container">
+<div class="section">
+    <h2>Track-Level Spotify Features</h2>
+    <div class="placeholder">Write your interpretation of the track-level Spotify features here.</div>
+</div>
+    <div class="section">
+        <h2>Album-Level Spotify Features</h2>
+        <div class="placeholder">Write your overall interpretation of the album-level Spotify features here.</div>
+    </div>
 
-<h2>Album Features</h2>
+    <div class="spotify-grid">
 
-<img src="plots/avg_acousticness_by_album.png">
-<div class="caption">Average Acousticness by Album</div>
+        <div class="spotify-card">
+            <img src="plots/avg_valence_by_album.png" alt="Average valence by album">
+        </div>
 
-<img src="plots/avg_energy_by_album.png">
-<div class="caption">Average Energy by Album</div>
+        <div class="spotify-card">
+            <img src="plots/avg_energy_by_album.png" alt="Average energy by album">
+        </div>
 
-<img src="plots/avg_loudness_by_album.png">
-<div class="caption">Average Loudness by Album</div>
+        <div class="spotify-card">
+            <img src="plots/avg_acousticness_by_album.png" alt="Average acousticness by album">
+        </div>
 
-<img src="plots/avg_valence_by_album.png">
-<div class="caption">Average Valence by Album</div>
+        <div class="spotify-card">
+            <img src="plots/avg_loudness_by_album.png" alt="Average loudness by album">
+        </div>
 
-<h2>PCA & Clustering</h2>
+    </div>
 
-<img src="plots/pca_sound_map_labeled.png">
-<div class="caption">PCA Sound Map</div>
+    <div class="section" style="margin-top: 48px;">
+        <h2>PCA and Clustering</h2>
+        <div class="placeholder">PC1 (The Intensity Axis): Usually captures the biggest difference in the data. For Massive Attack, this often separates the "Heavy/Aggressive" tracks (high energy, high loudness) from the "Atmospheric/Trip-Hop" tracks (high acousticness).
 
-<img src="plots/pca_kmeans_clusters.png">
-<div class="caption">K-means Clustering</div>
+PC2 (The Complexity/Mood Axis): Often captures the second-largest pattern, such as the difference between "Electronic/Instrumental" tracks and "Vocal/Poppy" tracks (Valence and Speechiness).</div>
+    </div>
 
-<div class="placeholder">Interpret your results here.</div>
+    <div class="spotify-large-stack">
+
+        <div class="spotify-large-card">
+            <img src="plots/pca_kmeans_clusters.png" alt="PCA sound map labeled">
+        </div>
+
+        <div class="spotify-large-card">
+            <img src="plots/pca_sound_map_labeled.png" alt="K-means clustering in PCA space">
+        </div>
+
+    </div>
 
 </div>
 

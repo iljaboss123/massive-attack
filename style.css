@@ -1,57 +1,290 @@
+/* =========================================================
+   Massive Attack website - final stylesheet
+   Clean light theme, responsive layout, larger images
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    background-color: #111;
-    color: #eee;
+    background-color: #e8eff8;
+    color: #222;
+    line-height: 1.6;
 }
 
 header {
-    background-color: #000;
-    padding: 15px;
+    background-color: #d5e1f2;
+    background-image:
+        linear-gradient(rgba(213, 225, 242, 0.68), rgba(213, 225, 242, 0.68)),
+        url("images/massive_attack.webp");
+    background-repeat: no-repeat, repeat-x;
+    background-size: 100% 100%, auto 100%;
+    background-position: center, top left;
+    padding: 20px 16px;
     text-align: center;
+    border-bottom: 1px solid #b6c7df;
+}
+
+header h1 {
+    margin: 0 0 12px 0;
+    color: #163055;
+    font-size: 2.4rem;
+}
+
+nav {
+    margin-top: 8px;
 }
 
 nav a {
-    color: #eee;
-    margin: 0 15px;
+    color: #163055;
+    margin: 0 14px;
     text-decoration: none;
     font-weight: bold;
+    font-size: 1.05rem;
 }
 
 nav a:hover {
-    color: #1db954;
+    color: #2d5183;
+}
+
+nav a.active,
+nav a[aria-current="page"] {
+    color: #0d2340;
+    text-decoration: underline;
+    text-underline-offset: 4px;
 }
 
 .container {
-    max-width: 1000px;
-    margin: auto;
-    padding: 20px;
+    max-width: 1700px;
+    margin: 0 auto;
+    padding: 32px 24px 48px 24px;
 }
 
-h1, h2, h3 {
-    color: #1db954;
+h1,
+h2,
+h3 {
+    color: #163055;
 }
 
-img {
-    width: 100%;
-    margin-top: 10px;
-    border-radius: 6px;
+h2 {
+    margin-top: 0;
+    margin-bottom: 14px;
+    font-size: 2rem;
+}
+
+h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-size: 1.45rem;
 }
 
 .section {
-    margin-bottom: 40px;
+    margin-bottom: 56px;
+}
+
+.placeholder {
+    background: #fff;
+    padding: 16px 18px;
+    border-left: 4px solid #3f6798;
+    margin-top: 10px;
+    border-radius: 4px;
 }
 
 .caption {
     text-align: center;
-    font-size: 0.9em;
-    margin-top: 5px;
-    color: #aaa;
+    font-size: 0.96em;
+    margin-top: 10px;
+    color: #555;
 }
 
-.placeholder {
-    background: #222;
-    padding: 15px;
-    border-left: 4px solid #1db954;
-    margin-top: 10px;
+/* ---------------------------------------------------------
+   Large standalone plots
+   --------------------------------------------------------- */
+
+.plot-large {
+    width: 100%;
+    max-width: 1250px;
+    display: block;
+    margin: 18px auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* ---------------------------------------------------------
+   Spotify page grid
+   --------------------------------------------------------- */
+
+.spotify-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 26px;
+    margin-top: 22px;
+    width: 100%;
+}
+
+.spotify-card {
+    background: #fff;
+    padding: 14px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    min-width: 0;
+}
+.spotify-large-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    margin-top: 22px;
+    width: 100%;
+}
+
+.spotify-large-card {
+    background: #fff;
+    padding: 14px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    width: 100%;
+}
+
+
+
+.spotify-large-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+.spotify-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
+/* ---------------------------------------------------------
+   Audio analysis pages
+   2 columns on desktop = larger images
+   1 column on smaller screens
+   --------------------------------------------------------- */
+
+.audio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+    margin-top: 24px;
+    align-items: start;
+    width: 100%;
+}
+.audio-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+.audio-card {
+    background: #fff;
+    padding: 14px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    min-width: 0;
+}
+
+.audio-card h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    padding: 0 2px;
+}
+
+.audio-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
+.audio-card .placeholder {
+    margin-top: 14px;
+}
+
+/* Optional wider card for a final single comparison on a page */
+.audio-card.wide {
+    grid-column: 1 / -1;
+}
+
+/* ---------------------------------------------------------
+   Five image strip (5 x 300x300)
+   --------------------------------------------------------- */
+
+.images {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 16px;
+    width: 100%;
+}
+
+.images img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+    border-radius: 8px;
+}
+
+/* ---------------------------------------------------------
+   General image behavior
+   --------------------------------------------------------- */
+
+img {
+    max-width: 100%;
+}
+
+/* ---------------------------------------------------------
+   Responsive layout
+   --------------------------------------------------------- */
+
+@media (max-width: 1200px) {
+    .audio-grid,
+    .spotify-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .plot-large {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 900px) {
+    .audio-grid,
+    .spotify-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .plot-large {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        padding: 18px 12px;
+    }
+
+    header h1 {
+        font-size: 1.75rem;
+    }
+
+    nav a {
+        font-size: 1rem;
+    }
+
+    .audio-card,
+    .spotify-card {
+        padding: 10px;
+    }
+
+    .placeholder {
+        padding: 14px;
+    }
 }

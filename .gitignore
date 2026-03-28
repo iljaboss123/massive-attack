@@ -2,3 +2,18 @@
 .Rhistory
 .RData
 .Ruserdata
+
+# VS Code
+.vscode/
+
+# Python
+__pycache__/
+*.pyc
+
+# R
+.Rhistory
+.RData
+
+# OS
+.DS_Store
+Thumbs.db
