@@ -19,14 +19,15 @@
 </header>
 
 <div class="container">
-<div class="section">
-    <h2>Track-Level Spotify Features</h2>
-    <div class="placeholder">Write your interpretation of the track-level Spotify features here.</div>
-</div>
+
     <div class="section">
         <h2>Album-Level Spotify Features</h2>
-        <div class="placeholder">Write your overall interpretation of the album-level Spotify features here.</div>
-    </div>
+        <div class="placeholder">Firstly I hoped to see some trend when comparing spotify API values per album, expecting at least a downwards trend for acousticness. So at first I was surprised by these results but after analyzing and listening to the albums again the results became more reasonable to me. It all starts with blue lines, which has the highest valence, energy, acousticness and loudness of the 5 albums. With the heavy, dub influenced, sample driven hiphop sound of the album, it is reasonable it has the highest energy and loudness of the 5, as it is the least atmospheric because of its high tempo heavy drum and bass (not the genre &#128540;).
+            Starting at Protection, Massive Attack starts shifting to more electronic and atmospheric production, up to 100th WIndow, which is their most atmospheric point, shown by low valence and low energy. Heligoland shifts back to a less atmospheric, more melody driven sound. Mezzanine is the biggest outlier here, as it is heavy and distorted, explaining the high loudness and energy, while still being very dark. <br>
+            So rather than a linear evolution, the data suggests a shift from rhythm and groove toward atmosphere, texture and emotional depth. It shows that through the albums many of the sounds of trip hop are explored, something I go deeper into in this next part.
+
+</div>
+    </div>  
 
     <div class="spotify-grid">
 
@@ -50,19 +51,20 @@
 
     <div class="section" style="margin-top: 48px;">
         <h2>PCA and Clustering</h2>
-        <div class="placeholder">PC1 (The Intensity Axis): Usually captures the biggest difference in the data. For Massive Attack, this often separates the "Heavy/Aggressive" tracks (high energy, high loudness) from the "Atmospheric/Trip-Hop" tracks (high acousticness).
-
-PC2 (The Complexity/Mood Axis): Often captures the second-largest pattern, such as the difference between "Electronic/Instrumental" tracks and "Vocal/Poppy" tracks (Valence and Speechiness).</div>
-    </div>
+        <div class="placeholder">Trip hop is already a genre and sound blending genre, and Massive Attack made a lot of use of this. To better understand how Massive Attack’s sound varies between albums a principal component analysis (PCA) was done. PCA also gives us the ability to combine all the variables that spotify gives us into only 2 dimensions. <br>
+PC1 explains 21% of the variance and can be interpreted as the spectrum between groove driven, energetic tracks and more atmospheric, texture focused songs. A track with a lower value on this axis are more ambient and texture driven songs, a track with a higher value on this axis will have higher energy, loudness and tempo. <br>
+PC2 explains around 19% of the variance, it captures the difference between electronic/instrumental tracks and vocal/poppy tracks. With low values representing the more electronic and less vocally intense tracks and high values being more vocal driven and instrumental.<br>
+The plot shows that except 100th Window, all albums share a sonic space in this case. Again indicating that Massive Attack does not linearly move from one sound to another, but rather continuously blends different sounds and musical elements throughout their work. Even as the overall focus of the album shifts from more rhythmically driven to an atmosphere and texture driven sound, separate tracks still explore a wide range of sonic possibilities.	<br>
+Using K-means clustering also enforces this idea, as songs from different albums fall into the same cluster, and songs from the same album fall into different clusters. Indicating that the albums do share a sonic space, and can have songs with overlapping sounds, while still having their own unique sound and focus, for example: Blue Lines and 100th Window mostly being in one cluster./<div>
+</div>
 
     <div class="spotify-large-stack">
 
         <div class="spotify-large-card">
-            <img src="plots/pca_kmeans_clusters.png" alt="PCA sound map labeled">
+            <img src="plots/pca_sound_map_labeled.png" alt="PCA sound map with albums labeled">
         </div>
-
         <div class="spotify-large-card">
-            <img src="plots/pca_sound_map_labeled.png" alt="K-means clustering in PCA space">
+            <img src="plots/pca_kmeans_clusters.png" alt="K-means clustering in PCA space">
         </div>
 
     </div>
